@@ -6,7 +6,6 @@ import Question from "./components/Question";
 import questions from "./../database/questions";
 import HighScores from "./components/HighScores";
 import AllDone from "./components/AllDone";
-import Github from "./components/Github";
 import TimeUp from "./components/TimeUp";
 
 const Home = () => {
@@ -37,7 +36,6 @@ const Home = () => {
   const handleState = (newState) => {
     setState(newState);
   };
-
 
   //Handleing the Score
 
@@ -116,7 +114,9 @@ const Home = () => {
           </p>
           <i className="fas fa-hand-point-left fa-lg text-white"></i>
         </div>
-        <p className="text-right text-white font-light">Time: 00:{time / 1000}</p>
+        <p className="text-right text-white font-light">
+          Time: 00:{time / 1000}
+        </p>
       </div>
       <div className="flex flex-col min-h-screen">
         <div className=" justify-center">
@@ -152,14 +152,9 @@ const Home = () => {
               handleReset={handleReset}
             />
           )}
-          {state === "timeup" && (
-           <TimeUp 
-             handleState ={handleState}
-           />
-
-          )}
+          {state === "timeup" && <TimeUp handleState={handleState} />}
         </div>
-      <Github />
+
         <Footer />
       </div>
     </div>
